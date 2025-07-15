@@ -56,17 +56,19 @@ router.post('/', authenticateAdmin, validateEventData, async (req, res) => {
   try {
     const { name, date, coverImage } = req.body;
     
+    if (!name || !coverImage) {
+      return res.status(400).json({ message: "Missing name or image" });
+    }
+    
     const newEvent = new Event({
       name,
       date,
       coverImage
     });
-     if (!name || !coverImage) {
-    return res.status(400).json({ message: "Missing name or image" });
-  }
+    
     const savedEvent = await newEvent.save();
     
-    res.status(201).json({
+    return res.status(201).json({
       success: true,
       data: savedEvent,
       message: 'Event created successfully'
@@ -74,7 +76,7 @@ router.post('/', authenticateAdmin, validateEventData, async (req, res) => {
     
   } catch (error) {
     console.error('Error creating event:', error);
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       message: 'Failed to create event'
     });

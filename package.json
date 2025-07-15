@@ -2,10 +2,10 @@
   "name": "gallery-backend",
   "version": "1.0.0",
   "description": "Gallery backend API with ImageKit integration",
-  "main": "src/server.ts",
+  "main": "dist/server.js",
   "scripts": {
     "build": "tsc",
-    "start": "node src/server.ts",
+    "start": "node dist/server.js",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "type-check": "tsc --noEmit",
     "start:dev": "npm run dev",
