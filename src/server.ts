@@ -4,14 +4,14 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import compression from 'compression';
 import dotenv from 'dotenv';
-import { connectDB } from './config/database.js';
-import imagekitRoutes from './routes/imagekit.js';
-import eventsRoutes from './routes/events.js';
-import statesRoutes from './routes/states.js';
-import photosRoutes from './routes/photos.js';
-import uploadRoutes from './routes/upload.js';
-import authRoutes from './routes/auth.js';
-import { errorHandler } from './middleware/errorHandler.js';
+import { connectDB } from './config/database';
+import imagekitRoutes from './routes/imagekit';
+import eventsRoutes from './routes/events';
+import statesRoutes from './routes/states';
+import photosRoutes from './routes/photos';
+import uploadRoutes from './routes/upload';
+import authRoutes from './routes/auth';
+import { errorHandler } from './middleware/errorHandler';
 
 // Load environment variables
 dotenv.config();

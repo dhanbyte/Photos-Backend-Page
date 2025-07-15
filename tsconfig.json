@@ -24,10 +24,8 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
-    "allowJs": true,
-    "resolveJsonModule": true
+    "moduleResolution": "node"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "**/*.test.ts"]
-} 
+}
